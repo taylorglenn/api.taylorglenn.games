@@ -31,6 +31,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/jennyjenny", () => "Who can I turn to?");
 
 app.Run();
