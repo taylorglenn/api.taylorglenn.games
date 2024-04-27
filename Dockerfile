@@ -22,4 +22,6 @@ RUN dotnet publish "./api.taylorglenn.games.csproj" -c $BUILD_CONFIGURATION -o /
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "api.taylorglenn.games.dll"]
+#ENTRYPOINT ["dotnet", "api.taylorglenn.games.dll"]
+# Use the following instead for Heroku
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet api.taylorglenn.games.dll
